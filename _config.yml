@@ -1,0 +1,34 @@
+title: Sid Sinha
+description: >-
+  Guitar and voice, photographs, and a slow archive of writing.
+url: "https://sidsays.github.io"
+baseurl: ""
+
+lang: en
+timezone: America/Chicago
+
+# Memoir entries live under /memoirs/<year>/<slug>/
+permalink: /memoirs/:year/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: /feed.xml
+
+# Posts are memoir entries: light reading surface, post layout.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      surface: light
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
