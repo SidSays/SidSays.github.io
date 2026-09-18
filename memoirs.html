@@ -1,0 +1,40 @@
+---
+layout: default
+permalink: /memoirs/
+nav: memoirs
+title: Life Memoirs
+description: Stories set down before they get lost.
+---
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Memoirs</p>
+    <h1 class="page-title">Life, written down</h1>
+    <p class="page-intro">
+      Things worth remembering, set down before they get lost. Written mostly
+      for Shivay and Saarth, and for whoever comes after them.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {%- if site.posts.size > 0 %}
+    <ol class="post-list">
+      {%- for post in site.posts %}
+      <li class="post-item">
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+          <h2 class="post-title">{{ post.title }}</h2>
+          {%- if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 170 }}</p>
+          {%- endif %}
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+    {%- else %}
+    <p class="empty-note">Nothing written yet.</p>
+    {%- endif %}
+  </div>
+</section>
