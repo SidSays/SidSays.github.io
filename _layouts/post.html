@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="entry">
+
+  <header class="entry-head wrap-read">
+    <p class="eyebrow">Memoirs</p>
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <p class="entry-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      {%- if page.place %} &middot; {{ page.place }}{% endif -%}
+    </p>
+  </header>
+
+  <div class="prose wrap-read">
+    {{ content }}
+  </div>
+
+  <nav class="entry-nav wrap-read" aria-label="More entries">
+    {%- if page.previous %}
+    <a class="entry-nav-item" href="{{ page.previous.url | relative_url }}">
+      <span class="entry-nav-label">Previous</span>
+      <span class="entry-nav-title">{{ page.previous.title }}</span>
+    </a>
+    {%- endif %}
+    {%- if page.next %}
+    <a class="entry-nav-item entry-nav-next" href="{{ page.next.url | relative_url }}">
+      <span class="entry-nav-label">Next</span>
+      <span class="entry-nav-title">{{ page.next.title }}</span>
+    </a>
+    {%- endif %}
+  </nav>
+
+  <p class="entry-back wrap-read">
+    <a href="{{ '/memoirs/' | relative_url }}">All entries</a>
+  </p>
+
+</article>
