@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0E0F11">
+
+  {%- seo -%}
+  {%- feed_meta -%}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+
+<body class="surface-{{ page.surface | default: 'dark' }}">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="wordmark" href="{{ '/' | relative_url }}">Sid Sinha</a>
+
+      <nav class="site-nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/music/' | relative_url }}"{% if page.nav == 'music' %} aria-current="page"{% endif %}>Music</a>
+        <a href="{{ '/photography/' | relative_url }}"{% if page.nav == 'photography' %} aria-current="page"{% endif %}>Photography</a>
+        <a href="{{ '/professional/' | relative_url }}"{% if page.nav == 'professional' %} aria-current="page"{% endif %}>Professional</a>
+        <a href="{{ '/memoirs/' | relative_url }}"{% if page.nav == 'memoirs' %} aria-current="page"{% endif %}>Memoirs</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-inner">
+      <p class="foot-name">Sid Sinha</p>
+      <nav class="foot-links" aria-label="Elsewhere">
+        <a href="https://www.youtube.com/@SidSinha" rel="me noopener" target="_blank">YouTube</a>
+        <a href="https://www.linkedin.com/in/siddharth-sinha/" rel="me noopener" target="_blank">LinkedIn</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </nav>
+      <p class="foot-legal">&copy; {{ 'now' | date: "%Y" }} Sid Sinha</p>
+    </div>
+  </footer>
+
+</body>
+</html>
