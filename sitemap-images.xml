@@ -17,4 +17,15 @@ sitemap: false
       <image:loc>{{ site.url }}/assets/img/sid-sinha.jpg</image:loc>
     </image:image>
   </url>
+{% assign sid_photos = site.static_files | where_exp: "f", "f.path contains '/assets/img/sid/'" %}
+{% if sid_photos.size > 0 %}
+  <url>
+    <loc>{{ site.url }}/about/</loc>
+{% for f in sid_photos %}{% assign ext = f.extname | downcase %}{% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}
+    <image:image>
+      <image:loc>{{ site.url }}{{ f.path }}</image:loc>
+    </image:image>
+{% endif %}{% endfor %}
+  </url>
+{% endif %}
 </urlset>

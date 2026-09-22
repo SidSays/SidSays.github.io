@@ -1,0 +1,68 @@
+---
+layout: default
+permalink: /about/
+nav: about
+title: About
+description: "About Siddharth (Sid) Sinha: Enterprise Architect in Salesforce and AI, guitarist and photographer in Dallas-Fort Worth, Texas."
+---
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h1 class="page-title">About Siddharth Sinha</h1>
+    <p class="page-intro">
+      I am Siddharth Sinha, Sid to nearly everyone. I work as an Enterprise
+      Architect on Salesforce and AI platforms, and live in the
+      Dallas&ndash;Fort Worth area of Texas.
+    </p>
+  </div>
+</section>
+
+{% assign sid_photos = site.static_files | where_exp: "f", "f.path contains '/assets/img/sid/'" %}
+{% if sid_photos.size > 0 %}
+<section class="section">
+  <div class="wrap">
+    <div class="photo-masonry">
+      {% for f in sid_photos %}
+      {% assign ext = f.extname | downcase %}
+      {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}
+      <figure>
+        <img src="{{ f.path | relative_url }}"
+             alt="{{ f.basename | replace: '-', ' ' | replace: '_', ' ' }}"
+             loading="lazy" decoding="async">
+      </figure>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section-ruled">
+  <div class="wrap">
+    <p class="section-label">Around here</p>
+    <div class="bio">
+      <p>Outside work I play acoustic guitar and sing, take photographs, and
+        write. The music, the photographs and the writing all live on this
+        site.</p>
+    </div>
+    <p class="prof-links">
+      <a href="{{ '/music/' | relative_url }}">Music</a>
+      <a href="{{ '/photography/' | relative_url }}">Photography</a>
+      <a href="{{ '/memoirs/' | relative_url }}">Memoirs</a>
+      <a href="{{ '/professional/' | relative_url }}">Professional</a>
+    </p>
+  </div>
+</section>
+
+<section class="section section-ruled">
+  <div class="wrap">
+    <p class="section-label">Get in touch</p>
+    <p class="page-intro">Email <a href="mailto:hi@sidsinha.com">hi@sidsinha.com</a>, or find me on LinkedIn, YouTube and Instagram.</p>
+    <p class="prof-links">
+      <a href="https://www.linkedin.com/in/siddharth-sinha/" rel="noopener" target="_blank">LinkedIn</a>
+      <a href="https://www.youtube.com/@SidSinha" rel="noopener" target="_blank">YouTube</a>
+      <a href="https://www.instagram.com/_sidsinha/" rel="noopener" target="_blank">Instagram</a>
+    </p>
+  </div>
+</section>
