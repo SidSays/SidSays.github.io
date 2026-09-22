@@ -742,3 +742,71 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: var(--radius);
   background: var(--bg-alt);
 }
+
+/* --- Mobile menu: links collapse behind a toggle below 720px ---- */
+/* Only when JavaScript is running (html.js), so the full menu     */
+/* still shows if the script ever fails.                           */
+
+.nav-toggle { display: none; }
+
+@media (max-width: 720px) {
+  .js .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-right: -0.625rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .nav-toggle-bar,
+  .nav-toggle-bar::before,
+  .nav-toggle-bar::after {
+    display: block;
+    width: 1.375rem;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .nav-toggle-bar { position: relative; }
+
+  .nav-toggle-bar::before,
+  .nav-toggle-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+
+  .nav-toggle-bar::before { top: -7px; }
+  .nav-toggle-bar::after { top: 7px; }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar { background-color: transparent; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar::before { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar::after { transform: translateY(-7px) rotate(-45deg); }
+
+  .js .site-nav {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-bottom: 1rem;
+  }
+
+  .js .site-nav.is-open { display: flex; }
+
+  .js .site-nav a { padding-block: 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-toggle-bar,
+  .nav-toggle-bar::before,
+  .nav-toggle-bar::after { transition: none; }
+}
