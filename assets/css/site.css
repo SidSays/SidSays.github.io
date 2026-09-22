@@ -178,6 +178,14 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-title {
   font-size: clamp(2.25rem, 6vw, 3.875rem);
   max-width: 18ch;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.hero-name {
+  margin-bottom: 1rem;
 }
 
 .hero-sub {
