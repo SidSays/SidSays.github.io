@@ -723,3 +723,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .industries-label { margin-top: 2.5rem; }
+
+/* --- About page: photos of Sid in a masonry layout -------------- */
+
+.photo-masonry {
+  columns: 3 16rem;
+  column-gap: 1rem;
+}
+
+.photo-masonry figure {
+  margin: 0 0 1rem;
+  break-inside: avoid;
+}
+
+.photo-masonry img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+}
