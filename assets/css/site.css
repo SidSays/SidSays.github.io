@@ -829,12 +829,12 @@ img { max-width: 100%; height: auto; display: block; }
 .foot-name { font-size: 2.25rem; }
 
 .hero-title {
-  font-family: 'Hubballi', 'Google Sans Flex', sans-serif;
-  font-weight: 400;
+  font-family: 'Qwitcher Grypen', 'Google Sans Flex', cursive;
+  font-weight: 700;
   font-variation-settings: normal;
   letter-spacing: 0;
-  line-height: 1.45;
-  font-size: 22px;
-  max-width: 24em;
+  line-height: 0.95;
+  font-size: clamp(3.125rem, 12vw, 6.75rem);
+  max-width: 14em;
   text-wrap: balance;
 }
