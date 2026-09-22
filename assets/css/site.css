@@ -834,6 +834,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-variation-settings: normal;
   letter-spacing: 0;
   line-height: 0.95;
-  font-size: clamp(3.75rem, 12vw, 6.75rem);
+  font-size: clamp(3.125rem, 12vw, 6.75rem);
   max-width: 14em;
+  text-wrap: balance;
 }
