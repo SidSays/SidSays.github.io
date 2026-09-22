@@ -838,3 +838,17 @@ img { max-width: 100%; height: auto; display: block; }
   max-width: 14em;
   text-wrap: balance;
 }
+
+/* --- Home cover banner ------------------------------------------- */
+/* Full width band. The photo is 16:9, so the band crops a slice out */
+/* of it: object-position keeps Sid's face in frame rather than      */
+/* slicing through it. On phones the band is close to the photo's    */
+/* own shape, so almost nothing is cropped.                          */
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: clamp(13rem, 38vh, 24rem);
+  object-fit: cover;
+  object-position: center 25%;
+}
