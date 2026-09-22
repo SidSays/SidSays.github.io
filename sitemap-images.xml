@@ -10,6 +10,9 @@ sitemap: false
     <image:image>
       <image:loc>{{ site.url }}/assets/img/sid-sinha.jpg</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>{{ site.url }}/assets/img/sid/Siddharth-Sinha-Outdoors.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>{{ site.url }}/professional/</loc>
