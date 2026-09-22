@@ -839,16 +839,12 @@ img { max-width: 100%; height: auto; display: block; }
   text-wrap: balance;
 }
 
-/* --- Home cover banner ------------------------------------------- */
-/* Full width band. The photo is 16:9, so the band crops a slice out */
-/* of it: object-position keeps Sid's face in frame rather than      */
-/* slicing through it. On phones the band is close to the photo's    */
-/* own shape, so almost nothing is cropped.                          */
 
-.cover img {
-  display: block;
-  width: 100%;
-  height: clamp(13rem, 38vh, 24rem);
+/* --- Portrait crop ------------------------------------------------ */
+/* The circular frame is square but the photos are not, so crop to    */
+/* the face rather than the middle of the frame.                      */
+
+.hero-portrait {
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center 22%;
 }
