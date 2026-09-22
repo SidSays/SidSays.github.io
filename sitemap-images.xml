@@ -8,16 +8,13 @@ sitemap: false
   <url>
     <loc>{{ site.url }}/</loc>
     <image:image>
-      <image:loc>{{ site.url }}/assets/img/sid-sinha.jpg</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>{{ site.url }}/assets/img/sid/Siddharth-Sinha-Outdoors.jpg</image:loc>
     </image:image>
   </url>
   <url>
     <loc>{{ site.url }}/professional/</loc>
     <image:image>
-      <image:loc>{{ site.url }}/assets/img/sid-sinha.jpg</image:loc>
+      <image:loc>{{ site.url }}/assets/img/sid/siddharth-sinha-professional-headshot.jpg</image:loc>
     </image:image>
   </url>
 {% assign sid_photos = site.static_files | where_exp: "f", "f.path contains '/assets/img/sid/'" %}
