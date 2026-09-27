@@ -1020,3 +1020,18 @@ img { max-width: 100%; height: auto; display: block; }
 .key-blood { background: var(--accent); }
 .key-spouse { background: var(--rose); }
 .key-sib { background: var(--sibling); }
+
+/* the aunts and their husbands, kept small so the main line fits */
+
+.unit.compact .node {
+  min-width: 5.75rem;
+  max-width: 7.5rem;
+  padding: 0.4rem 0.55rem;
+  border-left-width: 4px;
+}
+
+.unit.compact .node-name { font-size: 0.75rem; font-weight: 500; }
+.unit.compact .node-meta { font-size: 0.6875rem; }
+.unit.compact .node.spouse { margin: 0.55rem 0 0 0.3rem; }
+
+.ftree li:has(> .unit.compact) { padding-left: 0.25rem; padding-right: 0.25rem; }
