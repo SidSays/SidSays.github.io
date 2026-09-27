@@ -1021,3 +1021,34 @@ img { max-width: 100%; height: auto; display: block; }
 .key-spouse { background: var(--rose); }
 .key-sib { background: var(--sibling); }
 
+
+/* --- Long-form reading -------------------------------------------- */
+/* Near-white on near-black punishes the eye over several hundred     */
+/* words. Softer ink, looser leading, a narrower measure, and the     */
+/* one-line turns italicised so they read as beats, not stray lines.  */
+/* Uses its own tone rather than redefining --ink-read, which other   */
+/* pages rely on.                                                      */
+
+:root { --ink-prose: #c2c5c8; }
+
+.wrap-read p:not([class]) {
+  max-width: 34em;
+  margin-bottom: 1.4em;
+  color: var(--ink-prose);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.wrap-read p:not([class]):last-child { margin-bottom: 0; }
+
+.wrap-read h2 { margin-top: 3rem; }
+.wrap-read .section-label + h2 { margin-top: 0; }
+
+.beat {
+  max-width: 34em;
+  margin: 2.5rem 0;
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
