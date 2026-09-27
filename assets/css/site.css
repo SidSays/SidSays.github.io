@@ -897,3 +897,83 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .person-todo { color: var(--ink-mute); font-style: italic; }
+
+/* --- Family chart -------------------------------------------------- */
+/* Boxed tree, scrolls sideways on narrow screens. The written list    */
+/* below it is the accessible and indexable version.                   */
+
+.chart { overflow-x: auto; margin-top: 2rem; padding-bottom: 0.5rem; }
+
+.chart-inner {
+  min-width: 44rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.chart-inner > .gen:first-child { margin-top: 0; }
+
+/* stem dropping from the generation above */
+.chart-inner > .gen:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  width: 1px;
+  height: 1.25rem;
+  background: var(--line);
+}
+
+/* bar joining siblings */
+.gen.siblings::after {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: var(--line);
+}
+
+.unit { position: relative; display: flex; }
+
+.gen.siblings > .unit::before {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  width: 1px;
+  height: 1.25rem;
+  background: var(--line);
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 9.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius, 6px);
+  background: var(--bg-alt, rgba(255, 255, 255, 0.03));
+}
+
+.couple .node:first-child { border-right: 0; border-radius: 6px 0 0 6px; }
+.couple .node:last-child { border-radius: 0 6px 6px 0; }
+
+.node-spouse { background: transparent; }
+.node-plain { min-width: 7rem; }
+
+.node-name { font-size: 0.9375rem; font-weight: 600; color: var(--ink); }
+.node-meta { font-size: 0.75rem; color: var(--ink-soft); }
+
+.chart-note { margin-top: 1rem; font-size: 0.875rem; color: var(--ink-mute); }
