@@ -909,7 +909,7 @@ img { max-width: 100%; height: auto; display: block; }
   --sibling: #7fb8c9; /* siblings off the direct line */
 }
 
-.chart { overflow-x: auto; margin-top: 2rem; padding-bottom: 0.5rem; }
+.chart { overflow-x: auto; overscroll-behavior-x: contain; margin-top: 2rem; }
 
 .ftree, .ftree ul {
   display: flex;
@@ -919,7 +919,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0;
 }
 
-.ftree { min-width: 54rem; }
+.ftree { min-width: 50rem; }
 
 .ftree ul { position: relative; padding-top: 1.125rem; }
 
@@ -938,7 +938,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.125rem 0.35rem 0;
+  padding: 1.125rem 0.2rem 0;
 }
 
 .ftree > li { padding-top: 0; }
