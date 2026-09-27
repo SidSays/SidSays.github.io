@@ -1041,7 +1041,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .wrap-read p:not([class]):last-child { margin-bottom: 0; }
 
-.wrap-read h2 { margin-top: 3rem; }
+.wrap-read h2 { margin-top: 3rem; margin-bottom: 1.1rem; line-height: 1.25; }
 .wrap-read .section-label + h2 { margin-top: 0; }
 
 .beat {
