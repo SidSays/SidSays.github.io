@@ -909,7 +909,12 @@ img { max-width: 100%; height: auto; display: block; }
   --sibling: #7fb8c9; /* siblings off the direct line */
 }
 
-.chart { overflow-x: auto; overscroll-behavior-x: contain; margin-top: 2rem; }
+.chart {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  margin-top: 2rem;
+  padding-bottom: 0.25rem;
+}
 
 .ftree, .ftree ul {
   display: flex;
@@ -919,7 +924,14 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0;
 }
 
-.ftree { min-width: 50rem; }
+/* Sized to its content and aligned from the left edge. Centring a
+   flex container wider than its scroll box clips the left side and
+   makes it unreachable, which is what broke this on phones. */
+.ftree {
+  min-width: 50rem;
+  width: max-content;
+  margin-inline: auto;
+}
 
 .ftree ul { position: relative; padding-top: 1.125rem; }
 
