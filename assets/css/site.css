@@ -848,3 +848,52 @@ img { max-width: 100%; height: auto; display: block; }
   object-fit: cover;
   object-position: center 22%;
 }
+
+/* --- Family page --------------------------------------------------- */
+
+.tree {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  max-width: var(--measure, 42rem);
+}
+
+.tree > li {
+  position: relative;
+  padding: 0 0 1.75rem 1.5rem;
+  border-left: 1px solid var(--line);
+}
+
+.tree > li::before {
+  content: "";
+  position: absolute;
+  left: -4.5px;
+  top: 0.45rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.tree > li:last-child { padding-bottom: 0; border-left-color: transparent; }
+
+.tree-gen {
+  display: block;
+  font-size: 0.688rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.tree-people { margin: 0; }
+.tree-note { margin: 0.35rem 0 0; color: var(--ink-soft); font-size: 0.9375rem; }
+
+.person-meta {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.person-todo { color: var(--ink-mute); font-style: italic; }
