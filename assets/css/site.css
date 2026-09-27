@@ -951,7 +951,11 @@ img { max-width: 100%; height: auto; display: block; }
   flex-direction: column;
   align-items: center;
   padding: 1.125rem 0.4rem 0;
+  flex: none;          /* never shrink below content, or child rows
+                          spill past their parent and get clipped */
 }
+
+.ftree ul, .unit { flex: none; }
 
 .ftree > li { padding-top: 0; }
 
