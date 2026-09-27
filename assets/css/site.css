@@ -899,81 +899,92 @@ img { max-width: 100%; height: auto; display: block; }
 .person-todo { color: var(--ink-mute); font-style: italic; }
 
 /* --- Family chart -------------------------------------------------- */
-/* Boxed tree, scrolls sideways on narrow screens. The written list    */
-/* below it is the accessible and indexable version.                   */
+/* Nested list, so the connector lines follow real parent and child    */
+/* relationships. Amber edge marks the bloodline, rose marks married   */
+/* in, and spouses sit slightly lower and inset. Scrolls sideways on   */
+/* narrow screens; the written list below is the readable version.     */
+
+:root { --rose: #c98b8b; }
 
 .chart { overflow-x: auto; margin-top: 2rem; padding-bottom: 0.5rem; }
 
-.chart-inner {
-  min-width: 44rem;
+.ftree, .ftree ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ftree { min-width: 54rem; }
+
+.ftree ul { position: relative; padding-top: 1.125rem; }
+
+.ftree ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 1.125rem;
+  background: var(--line);
+}
+
+.ftree li {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1.125rem 0.5rem 0;
 }
 
-.gen {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
+.ftree > li { padding-top: 0; }
 
-.chart-inner > .gen:first-child { margin-top: 0; }
-
-/* stem dropping from the generation above */
-.chart-inner > .gen:not(:first-child)::before {
+.ftree li::before,
+.ftree li::after {
   content: "";
   position: absolute;
-  top: -2.5rem;
-  left: 50%;
-  width: 1px;
-  height: 1.25rem;
-  background: var(--line);
+  top: 0;
+  width: 50%;
+  height: 1.125rem;
+  border-top: 1px solid var(--line);
 }
 
-/* bar joining siblings */
-.gen.siblings::after {
-  content: "";
-  position: absolute;
-  top: -1.25rem;
-  left: 12%;
-  right: 12%;
-  height: 1px;
-  background: var(--line);
-}
+.ftree li::before { right: 50%; }
+.ftree li::after { left: 50%; }
 
-.unit { position: relative; display: flex; }
+.ftree li:only-child::before,
+.ftree li:only-child::after,
+.ftree > li::before,
+.ftree > li::after { display: none; }
 
-.gen.siblings > .unit::before {
-  content: "";
-  position: absolute;
-  top: -1.25rem;
-  left: 50%;
-  width: 1px;
-  height: 1.25rem;
-  background: var(--line);
-}
+.ftree li:first-child::before,
+.ftree li:last-child::after { border-top: 0; }
+
+.ftree li:last-child::before { border-right: 1px solid var(--line); }
+.ftree li:first-child::after { border-left: 1px solid var(--line); }
+
+.unit { display: flex; align-items: flex-start; }
 
 .node {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  min-width: 9.5rem;
-  padding: 0.75rem 1rem;
+  min-width: 8.5rem;
+  padding: 0.65rem 0.9rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius, 6px);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
   background: var(--bg-alt, rgba(255, 255, 255, 0.03));
 }
 
-.couple .node:first-child { border-right: 0; border-radius: 6px 0 0 6px; }
-.couple .node:last-child { border-radius: 0 6px 6px 0; }
-
-.node-spouse { background: transparent; }
-.node-plain { min-width: 7rem; }
+.node.spouse {
+  border-left-color: var(--rose);
+  margin: 0.9rem 0 0 0.5rem;
+}
 
 .node-name { font-size: 0.9375rem; font-weight: 600; color: var(--ink); }
+.node.spouse .node-name { font-weight: 500; }
 .node-meta { font-size: 0.75rem; color: var(--ink-soft); }
 
 .chart-note { margin-top: 1rem; font-size: 0.875rem; color: var(--ink-mute); }
