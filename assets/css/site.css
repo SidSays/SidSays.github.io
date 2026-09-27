@@ -928,8 +928,14 @@ img { max-width: 100%; height: auto; display: block; }
    flex container wider than its scroll box clips the left side and
    makes it unreachable, which is what broke this on phones. */
 .ftree {
-  min-width: 50rem;
+  /* 62rem is the tree's own content width. Sizing it to that keeps the
+     whole chart inside its box, so nothing is clipped, and lets the box
+     centre itself on wide screens. flex-start is the safety net: if the
+     family grows past this width, the overflow goes right where it can
+     be scrolled to, instead of off both edges where it cannot. */
+  min-width: 62rem;
   width: max-content;
+  justify-content: flex-start;
   margin-inline: auto;
 }
 
