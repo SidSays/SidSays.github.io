@@ -993,3 +993,30 @@ img { max-width: 100%; height: auto; display: block; }
 .node-meta { font-size: 0.75rem; color: var(--ink-soft); }
 
 .chart-note { margin-top: 1rem; font-size: 0.875rem; color: var(--ink-mute); }
+
+/* key to the chart colours */
+
+.chart-key {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.chart-key li { display: flex; align-items: center; gap: 0.6rem; }
+
+.key-swatch {
+  display: inline-block;
+  width: 5px;
+  height: 1.1rem;
+  border-radius: 2px;
+  flex: none;
+}
+
+.key-blood { background: var(--accent); }
+.key-spouse { background: var(--rose); }
+.key-sib { background: var(--sibling); }
