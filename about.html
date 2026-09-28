@@ -28,10 +28,18 @@ description: "About Siddharth (Sid) Sinha: Enterprise Architect in Salesforce an
       {% for f in sid_photos %}
       {% assign ext = f.extname | downcase %}
       {% if ext == '.jpg' or ext == '.jpeg' or ext == '.png' or ext == '.webp' %}
+      {% case f.name %}
+        {% when 'Siddharth-Sinha-Outdoors.jpg' %}{% assign cap = 'Siddharth (Sid) Sinha in Mussoorie, India, 2010' %}
+        {% when 'siddharth-sinha-outdoor-portrait.jpg' %}{% assign cap = 'Siddharth (Sid) Sinha in New Jersey' %}
+        {% when 'siddharth-sinha-photographer-with-camera.jpg' %}{% assign cap = 'Siddharth (Sid) Sinha in Wayanad, Kerala, 2011' %}
+        {% when 'siddharth-sinha-professional-headshot.jpg' %}{% assign cap = 'Siddharth (Sid) Sinha, a studio headshot taken at IBM' %}
+        {% else %}{% assign cap = f.basename | replace: '-', ' ' | replace: '_', ' ' %}
+      {% endcase %}
       <figure>
         <img src="{{ f.path | relative_url }}"
-             alt="{{ f.basename | replace: '-', ' ' | replace: '_', ' ' }}"
+             alt="{{ cap }}"
              loading="lazy" decoding="async">
+        <figcaption>{{ cap }}</figcaption>
       </figure>
       {% endif %}
       {% endfor %}
