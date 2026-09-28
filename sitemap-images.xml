@@ -8,7 +8,7 @@ sitemap: false
   <url>
     <loc>{{ site.url }}/</loc>
     <image:image>
-      <image:loc>{{ site.url }}/assets/img/sid/Siddharth-Sinha-Outdoors.jpg</image:loc>
+      <image:loc>{{ site.url }}/assets/img/sid-sinha.jpg</image:loc>
     </image:image>
   </url>
   <url>
