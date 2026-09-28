@@ -1083,3 +1083,10 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.5;
   color: var(--ink-mute);
 }
+
+/* About page header, centred as a column above the gallery. The text
+   keeps its reading width; only the block is centred, so it does not
+   sit stranded in the left half of a much wider page. */
+
+.page-head-center .wrap { text-align: center; }
+.page-head-center .page-intro { margin-inline: auto; }
