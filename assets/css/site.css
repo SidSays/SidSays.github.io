@@ -1074,3 +1074,12 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.6;
   color: var(--ink-soft);
 }
+
+/* captions under the About page photos */
+
+.photo-masonry figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
